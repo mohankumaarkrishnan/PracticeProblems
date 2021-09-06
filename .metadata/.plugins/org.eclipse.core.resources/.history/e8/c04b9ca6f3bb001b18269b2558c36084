@@ -1,0 +1,30 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class SmallestAbsoluteDifference {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] a= {-1,5,10,20,28,3};
+		int[] b= {26,134,135,15,17};
+		smallDifference(a, b);
+	}
+	
+	public static int[] smallDifference(int[] a,int[] b) {
+		Map<Integer,Integer[]> map= new LinkedHashMap<>();
+		
+		for(int i=0;i<a.length;i++) {
+			for(int j=0;j<b.length;j++) {
+				map.put(Math.abs(a[i]-b[j]), new Integer[] {a[i],b[j]});
+				
+			}
+		}
+		map.entrySet().stream().sorted().collect(Collectors.toMap(keyMapper, valueMapper));
+		
+		System.out.println(map);
+		return null;
+	}
+
+}

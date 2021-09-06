@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class FourSum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public static List<List<Integer>> getFourNo(Integer[] a,int sum){
+		
+		HashMap<Integer,List<Integer>> map= new HashMap<>();
+		List<List<Integer>> list=new ArrayList<List<Integer>>();
+		int s=0;
+		int rem=0;
+		
+		for(int i=0;i<a.length-1;i++) {
+			for(int j=i+1;j<a.length;j++) {
+				s=a[i]+a[j];
+				rem=sum-s;
+				if(map.containsKey(rem)) {
+					List<Integer> list1=new ArrayList<Integer>();
+					List<Integer> l= new ArrayList<Integer>(map.get(rem));
+					l.add(a[i]);l.add(a[j]);
+					list.add(l);
+				}
+			}
+			for(int j=i;j>=0;j--) {
+				
+			}
+		}
+		
+		
+		
+		return   null;
+	}
+	
+	
+
+}
